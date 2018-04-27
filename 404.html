@@ -12,12 +12,14 @@
     <script>
       var href = window.location.href;
       var baseString = href.match(/(https?\:\/\/[a-zA-Z\.]+\/[a-zA-Z\-]+\/)[.]*/);
-      (function() {
+      var func = function() {
         var script = document.createElement('script');
         script.type = 'application/javascript';
         script.src = baseString + 'bundle.js';
         document.body.appendChild(script);
-      }());
+        console.log('script tag appended');
+      };
+      window.addEventListener('load', func);
     </script>
     <script type="text/javascript" src="bundle.js"></script>
   </body>

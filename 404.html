@@ -9,6 +9,16 @@
   <body>
     helloboys
     <div id="root"></div>
+    <script>
+      var href = window.location.href;
+      var baseString = href.match(/(https?\:\/\/[a-zA-Z\.]+\/[a-zA-Z\-]+\/)[.]*/);
+      (function() {
+        var script = document.createElement('script');
+        script.type = 'application/javascript';
+        script.src = baseString + 'bundle.js';
+        document.body.appendChild(script);
+      }());
+    </script>
     <script type="text/javascript" src="bundle.js"></script>
   </body>
 </html>
